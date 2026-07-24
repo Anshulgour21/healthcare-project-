@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+  </defs>
+  <!-- Base circle / background -->
+  <circle cx="100" cy="100" r="90" fill="#ecfdf5" />
+  
+  <!-- Path / Road winding upwards -->
+  <path d="M 60 160 Q 80 140, 100 140 T 140 100 T 80 70" fill="none" stroke="#047857" stroke-width="12" stroke-linecap="round" />
+  
+  <!-- Star / Sparkle at the end of the path -->
+  <path d="M 80 40 L 85 55 L 100 60 L 85 65 L 80 80 L 75 65 L 60 60 L 75 55 Z" fill="#fbbf24" />
+  
+  <!-- Leaf element signifying growth -->
+  <path d="M 120 140 C 140 140, 160 120, 160 100 C 140 100, 120 120, 120 140 Z" fill="url(#leafGrad)" />
+</svg>
