@@ -3,9 +3,9 @@ import { Link, Navigate } from 'react-router-dom';
 import { 
   ArrowRight, Brain, Zap, ShieldCheck, Target, Trophy, 
   BarChart, PlayCircle, Star, Sparkles, Layers,
-  Code, Palette, Briefcase, Cpu, CheckCircle2,
+  Activity, Microscope, Stethoscope, Syringe, CheckCircle2,
   Users, Building, MessageSquare, Twitter, Github,
-  User
+  User, Cross, Heart
 } from 'lucide-react';
 import Button from '../components/ui/Button';
 import { useAuth } from '../context/AuthContext';
@@ -29,24 +29,24 @@ export default function Home() {
             <div className="lg:w-1/2 flex flex-col items-start text-left space-y-8 animate-slide">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface/80 backdrop-blur border border-border shadow-soft">
                 <Sparkles className="h-4 w-4 text-accent" />
-                <span className="text-sm font-medium text-heading">The Next Generation of Learning</span>
+                <span className="text-sm font-medium text-heading">The Next Generation of Clinical Education</span>
               </div>
               
               <h1 className="text-5xl md:text-6xl lg:text-hero font-display font-extrabold tracking-tight text-heading leading-[1.1]">
-                Accelerate your team's potential with <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Intelligent Learning.</span>
+                Accelerate clinical excellence with <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Intelligent Learning.</span>
               </h1>
               
               <p className="text-lg md:text-xl text-body max-w-xl leading-relaxed">
-                MedVerse is the world's most advanced, AI-powered learning platform designed for modern enterprises. Train faster, track smarter, and achieve more.
+                MedVerse is the world's most advanced, AI-powered learning platform designed for healthcare professionals. Train faster, maintain compliance, and improve patient care.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 pt-4 w-full sm:w-auto">
                 <Button as={Link} to="/sign-up" size="lg" className="h-14 px-8 text-base rounded-button shadow-premium group">
-                  Start Learning Free
+                  Start Clinical Training
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
                 <Button as={Link} to="/explore" size="lg" variant="outline" className="h-14 px-8 text-base rounded-button bg-surface/50 backdrop-blur">
-                  View Enterprise
+                  View Healthcare Enterprise
                 </Button>
               </div>
               
@@ -59,7 +59,7 @@ export default function Home() {
                   ))}
                 </div>
                 <div className="text-sm font-medium text-body">
-                  <span className="text-heading font-bold">10,000+</span> teams already learning
+                  <span className="text-heading font-bold">5,000+</span> hospitals already learning
                 </div>
               </div>
             </div>
@@ -77,7 +77,9 @@ export default function Home() {
                 </div>
                 <div className="flex-1 p-6 flex flex-col gap-6">
                    <div className="flex gap-4">
-                     <div className="w-12 h-12 rounded-2xl bg-primary/20 animate-pulse"></div>
+                     <div className="w-12 h-12 rounded-2xl bg-primary/20 animate-pulse flex items-center justify-center">
+                        <Activity className="h-6 w-6 text-primary" />
+                     </div>
                      <div className="flex-1 space-y-3 py-1">
                         <div className="h-4 bg-border rounded-full w-1/3"></div>
                         <div className="h-3 bg-border/60 rounded-full w-1/4"></div>
@@ -97,9 +99,11 @@ export default function Home() {
                          <div className="relative w-16 h-16">
                            <svg className="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
                              <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="var(--border)" strokeWidth="3" />
-                             <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="var(--accent)" strokeWidth="3" strokeDasharray="75, 100" />
+                             <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="var(--accent)" strokeWidth="3" strokeDasharray="100, 100" />
                            </svg>
-                           <div className="absolute inset-0 flex items-center justify-center text-xs font-bold text-heading">75%</div>
+                           <div className="absolute inset-0 flex items-center justify-center text-xs font-bold text-heading text-success">
+                              <ShieldCheck className="h-6 w-6" />
+                           </div>
                          </div>
                       </div>
                    </div>
@@ -121,8 +125,8 @@ export default function Home() {
                        <CheckCircle2 className="h-5 w-5" />
                     </div>
                     <div>
-                       <div className="text-sm font-bold text-heading">Course Completed</div>
-                       <div className="text-xs text-body">Advanced React Patterns</div>
+                       <div className="text-sm font-bold text-heading">CME Credits Earned</div>
+                       <div className="text-xs text-body">Advanced Patient Care</div>
                     </div>
                  </div>
               </div>
@@ -130,9 +134,9 @@ export default function Home() {
               <div className="absolute -right-6 bottom-1/4 bg-surface p-4 rounded-[20px] shadow-premium border border-border animate-slide" style={{ animationDelay: '600ms' }}>
                  <div className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center text-accent">
-                       <Zap className="h-4 w-4" />
+                       <ShieldCheck className="h-4 w-4" />
                     </div>
-                    <div className="text-sm font-bold text-heading">+450 XP Gained</div>
+                    <div className="text-sm font-bold text-heading">HIPAA Compliant</div>
                  </div>
               </div>
 
@@ -144,12 +148,12 @@ export default function Home() {
       {/* Trusted By */}
       <section className="py-12 border-y border-border/50 bg-surface/30">
          <div className="container mx-auto px-6 max-w-7xl">
-            <p className="text-center text-sm font-semibold text-body mb-8 uppercase tracking-widest">Trusted by innovative teams worldwide</p>
+            <p className="text-center text-sm font-semibold text-body mb-8 uppercase tracking-widest">Trusted by leading health systems</p>
             <div className="flex flex-wrap justify-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-               {[Layers, Building, Zap, Trophy, ShieldCheck].map((Icon, i) => (
+               {[Layers, Building, Activity, Heart, ShieldCheck].map((Icon, i) => (
                   <div key={i} className="flex items-center gap-2">
                      <Icon className="h-8 w-8 text-heading" />
-                     <span className="text-xl font-bold font-display text-heading">LogoIpsum</span>
+                     <span className="text-xl font-bold font-display text-heading">Health{['Care', 'Net', 'Plus', 'System', 'Trust'][i]}</span>
                   </div>
                ))}
             </div>
@@ -160,18 +164,18 @@ export default function Home() {
       <section className="py-24 md:py-32">
         <div className="container mx-auto px-6 max-w-7xl">
            <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-              <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-heading">Engineered for Excellence</h2>
-              <p className="text-lg text-body">MedVerse provides a comprehensive suite of tools designed to optimize the learning experience from day one.</p>
+              <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-heading">Engineered for Clinical Excellence</h2>
+              <p className="text-lg text-body">MedVerse provides a comprehensive suite of tools designed to optimize healthcare training and ensure hospital compliance.</p>
            </div>
            
            <div className="grid md:grid-cols-3 gap-6">
               {[
-                { icon: Brain, title: "AI-Powered Paths", desc: "Adaptive curriculum that molds to each user's learning speed." },
-                { icon: BarChart, title: "Intelligent Insights", desc: "Deep analytics to track engagement, completion, and retention." },
-                { icon: Zap, title: "Seamless Sync", desc: "Start on desktop, finish on mobile. Progress is always in sync." },
-                { icon: Target, title: "Goal Tracking", desc: "Set micro-goals and achieve them with daily gamified streaks." },
-                { icon: ShieldCheck, title: "Enterprise Grade", desc: "Bank-level security and compliance for your organization's data." },
-                { icon: Users, title: "Collaborative Learning", desc: "Discuss topics, share notes, and learn together in real-time." },
+                { icon: Brain, title: "Adaptive Clinical Pathways", desc: "AI-driven curriculum that molds to each practitioner's specialty and learning speed." },
+                { icon: ShieldCheck, title: "Compliance Tracking", desc: "Automated monitoring for HIPAA, OSHA, and hospital-specific certifications." },
+                { icon: Target, title: "CME & Skill Milestones", desc: "Set micro-goals and achieve continuing medical education credits effortlessly." },
+                { icon: Activity, title: "Real-time Metrics", desc: "Deep analytics to track department engagement, course completion, and knowledge retention." },
+                { icon: Zap, title: "Seamless Shift Sync", desc: "Start on desktop, finish on mobile during rounds. Progress is always in sync." },
+                { icon: Users, title: "Peer Case Studies", desc: "Discuss complex patient scenarios, share medical notes, and learn collaboratively." },
               ].map((feat, i) => (
                  <div key={i} className="bg-surface border border-border p-8 rounded-[24px] hover:shadow-soft transition-all duration-300 hover:-translate-y-1">
                     <div className="h-12 w-12 rounded-[16px] bg-surface-secondary flex items-center justify-center text-primary mb-6">
@@ -191,26 +195,38 @@ export default function Home() {
            <div className="flex flex-col lg:flex-row items-center gap-16">
               <div className="lg:w-1/2 order-2 lg:order-1 relative">
                  <div className="bg-heading rounded-[32px] p-8 shadow-premium transform -rotate-2 hover:rotate-0 transition-transform duration-500 ease-spring">
-                    <div className="flex gap-2 mb-6">
-                       <div className="w-3 h-3 rounded-full bg-surface/20"></div>
-                       <div className="w-3 h-3 rounded-full bg-surface/20"></div>
-                       <div className="w-3 h-3 rounded-full bg-surface/20"></div>
+                    <div className="flex gap-2 mb-6 border-b border-white/10 pb-4">
+                       <div className="w-3 h-3 rounded-full bg-error/50"></div>
+                       <div className="w-3 h-3 rounded-full bg-warning/50"></div>
+                       <div className="w-3 h-3 rounded-full bg-success/50"></div>
                     </div>
                     <div className="space-y-4 font-mono text-sm">
-                       <div className="text-primary/70"><span className="text-accent">const</span> <span className="text-success">learner</span> = await MedVerse.init();</div>
-                       <div className="text-surface-secondary/70">{'// AI computes optimal path'}</div>
-                       <div className="text-primary/70"><span className="text-accent">const</span> <span className="text-success">path</span> = learner.getOptimalPath();</div>
-                       <div className="text-primary/70">path.start();</div>
+                       <div className="flex items-center gap-3 text-success">
+                          <CheckCircle2 className="h-4 w-4" />
+                          <span>Advanced Cardiac Life Support (ACLS)</span>
+                       </div>
+                       <div className="flex items-center gap-3 text-success">
+                          <CheckCircle2 className="h-4 w-4" />
+                          <span>HIPAA Privacy and Security</span>
+                       </div>
+                       <div className="flex items-center gap-3 text-success">
+                          <CheckCircle2 className="h-4 w-4" />
+                          <span>Bloodborne Pathogens Safety</span>
+                       </div>
+                       <div className="flex items-center gap-3 text-primary/70">
+                          <Activity className="h-4 w-4 animate-pulse" />
+                          <span className="text-white/90">Pediatric Advanced Life Support (In Progress...)</span>
+                       </div>
                     </div>
                  </div>
               </div>
               <div className="lg:w-1/2 order-1 lg:order-2 space-y-6">
                  <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-heading">A frictionless learning experience.</h2>
                  <p className="text-lg text-body leading-relaxed">
-                   Say goodbye to clunky interfaces. MedVerse provides a distraction-free, keyboard-first environment that developers and designers love. Focus entirely on absorbing knowledge.
+                   Say goodbye to clunky, outdated hospital LMS interfaces. MedVerse provides a distraction-free, modern environment that physicians and nurses love. Focus entirely on absorbing knowledge.
                  </p>
                  <ul className="space-y-4 pt-4">
-                    {['Dark mode by default', 'Keyboard shortcuts for everything', 'Zero-latency video playback'].map((item, i) => (
+                    {['Bite-sized modules for busy shifts', 'Offline access for remote clinics', 'Automated CME credit reporting'].map((item, i) => (
                        <li key={i} className="flex items-center gap-3 text-heading font-medium">
                           <CheckCircle2 className="h-5 w-5 text-primary" />
                           {item}
@@ -227,8 +243,8 @@ export default function Home() {
         <div className="container mx-auto px-6 max-w-7xl">
            <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-12">
               <div className="space-y-4 max-w-2xl">
-                 <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight text-heading">Explore Curated Categories</h2>
-                 <p className="text-lg text-body">Discover world-class content across disciplines, structured perfectly for fast consumption.</p>
+                 <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight text-heading">Explore Curated Clinical Categories</h2>
+                 <p className="text-lg text-body">Discover world-class medical content across specialties, structured perfectly for fast consumption.</p>
               </div>
               <Button as={Link} to="/explore" variant="ghost" className="gap-2">
                  Browse all <ArrowRight className="h-4 w-4" />
@@ -237,10 +253,10 @@ export default function Home() {
            
            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {[
-                { icon: Code, name: "Engineering", count: "120+ Courses" },
-                { icon: Palette, name: "Design", count: "85+ Courses" },
-                { icon: Briefcase, name: "Business", count: "200+ Courses" },
-                { icon: Cpu, name: "Artificial Intelligence", count: "45+ Courses" },
+                { icon: Stethoscope, name: "Nursing Education", count: "120+ Courses" },
+                { icon: Activity, name: "Patient Care & Safety", count: "85+ Courses" },
+                { icon: Syringe, name: "Surgical Protocols", count: "200+ Courses" },
+                { icon: Microscope, name: "Medical Technology", count: "45+ Courses" },
               ].map((cat, i) => (
                  <Link key={i} to="/explore" className="group bg-surface border border-border p-6 rounded-[24px] hover:border-primary hover:shadow-soft transition-all duration-300">
                     <div className="h-12 w-12 rounded-[16px] bg-surface-secondary flex items-center justify-center text-heading group-hover:bg-primary group-hover:text-white transition-colors mb-6">
@@ -257,7 +273,7 @@ export default function Home() {
       {/* Testimonials */}
       <section className="py-24 md:py-32 bg-heading text-surface">
          <div className="container mx-auto px-6 max-w-7xl text-center space-y-16">
-            <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight">Loved by industry leaders</h2>
+            <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight">Loved by clinical leaders</h2>
             
             <div className="grid md:grid-cols-3 gap-6 text-left">
                {[1,2,3].map((i) => (
@@ -286,10 +302,10 @@ export default function Home() {
          <div className="container mx-auto px-6 max-w-7xl">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                {[
-                  { value: "10M+", label: "Active Learners" },
-                  { value: "99.9%", label: "Uptime SLA" },
-                  { value: "4.9/5", label: "Average Course Rating" },
-                  { value: "50+", label: "Countries Reached" }
+                  { value: "2M+", label: "Active Clinicians" },
+                  { value: "100%", label: "HIPAA Compliant" },
+                  { value: "50M+", label: "CME Credits Awarded" },
+                  { value: "300+", label: "Health Systems" }
                ].map((stat, i) => (
                   <div key={i} className="space-y-2">
                      <div className="text-4xl md:text-5xl font-display font-extrabold text-heading">{stat.value}</div>
@@ -309,9 +325,9 @@ export default function Home() {
                <div className="absolute bottom-0 left-0 w-64 h-64 bg-black/10 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
                
                <div className="relative z-10 space-y-8 max-w-3xl mx-auto text-white">
-                  <h2 className="text-4xl md:text-6xl font-display font-extrabold tracking-tight">Ready to level up?</h2>
+                  <h2 className="text-4xl md:text-6xl font-display font-extrabold tracking-tight">Ready to elevate patient care?</h2>
                   <p className="text-lg md:text-xl text-white/80 leading-relaxed">
-                     Join thousands of modern teams building the future. Start your 14-day free trial today.
+                     Join thousands of modern hospitals building the future of clinical education. Start your free enterprise trial today.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
                      <Button as={Link} to="/sign-up" size="lg" className="h-14 px-8 text-base rounded-button bg-white text-primary hover:bg-surface shadow-soft">
